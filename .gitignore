@@ -1,0 +1,12 @@
+# 1. Ignore absolutely everything in this folder by default
+*
+
+# 2. BUT do not ignore folders
+!*/
+
+# 3. BUT do not ignore C code
+!*.c
+
+# 4. BUT do not ignore READMEs or this shield file
+!*.md
+!.gitignore
