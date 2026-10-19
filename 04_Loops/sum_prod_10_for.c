@@ -1,27 +1,33 @@
-/*Write a program to input the first 10 numbers, 
-find the sum of even numbers, 
-and the multiplication of odd numbers using a for loop.*/
+/*Write a program to input a limit 'n', and find the sum of all even numbers and
+ the product (multiplication) of all odd numbers from 1 to 'n' using a for loop.*/
 
 #include <stdio.h>
 
 int main() {
-    int i, num, sum_even = 0, prod_odd = 1;
+    // 's' holds the sum, so it must start at 0.
+    // 'p' holds the product, so it must start at 1 (multiplying by 0 would ruin it).
+    int i, n, s = 0, p = 1;
     
-    printf("Enter 10 numbers:\n");
+    printf("Enter the limit: ");
+    scanf("%d", &n);
     
-    for (i = 1; i <= 10; i++) {
-        printf("Number %d: ", i);
-        scanf("%d", &num);
+    // The loop starts at 1 and runs exactly 'n' times
+    for(i = 1; i <= n; i++) {
         
-        if (num % 2 == 0) {
-            sum_even = sum_even + num;
-        } else {
-            prod_odd = prod_odd * num;
+        // The modulo operator (%) checks the remainder. 
+        // If dividing 'i' by 2 leaves a remainder of 0, the number is even.
+        if(i % 2 == 0) {
+            s = s + i; // Add the even number to our running sum
+        } 
+        // If it's not even, it must be odd. No need for a second if-statement.
+        else {
+            p = p * i; // Multiply the odd number into our running product
         }
     }
     
-    printf("Sum of even numbers: %d\n", sum_even);
-    printf("Multiplication of odd numbers: %d\n", prod_odd);
+    // Print the final calculated values after the loop finishes
+    printf("Sum of even numbers = %d\n", s);
+    printf("Multiplication of odd numbers = %d\n", p);
     
     return 0;
 }
