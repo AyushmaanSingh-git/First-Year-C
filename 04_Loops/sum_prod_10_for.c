@@ -6,7 +6,7 @@
 int main() {
     // 's' holds the sum, so it must start at 0.
     // 'p' holds the product, so it must start at 1 (multiplying by 0 would ruin it).
-    int i, n, s = 0, p = 1;
+    int i, n , s = 0, p = 1;
     
     printf("Enter the limit: ");
     scanf("%d", &n);
